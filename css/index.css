@@ -7162,6 +7162,9 @@ th.hide-for-touch {
 html {
   font-size: 10px; }
 
+body {
+  font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif; }
+
 nav.top-bar {
   background-color: #333;
   height: 6rem;
@@ -7196,5 +7199,14 @@ form input[type="text"],
 form select {
   height: 3.7rem;
   font-size: 1.4rem; }
+form a.button.expand {
+  font-size: 1.6rem;
+  font-weight: bold; }
+
+[data-abide] .error small.error {
+  background-color: #c60f13;
+  padding: 2px;
+  font-size: 1.4rem;
+  font-style: normal; }
 
 /*# sourceMappingURL=index.css.map */
