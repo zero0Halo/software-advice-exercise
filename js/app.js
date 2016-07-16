@@ -3,7 +3,6 @@ requirejs.config({
     paths: {
       app: "../",
       views: "../views",
-      fnd: "foundation",
 
       jquery: "jquery.min",
       underscore: "underscore.min",
@@ -13,6 +12,10 @@ requirejs.config({
       modernizr: "modernizr",
       placeholder: "placeholder",
       fastclick: "fastclick",
+
+      moustache: "moustache.min",
+      text: "text",
+      stache: "stache",
 
       foundation: "foundation/foundation",
       "foundation.abide": "foundation/foundation.abide",
@@ -31,6 +34,9 @@ requirejs.config({
       "foundation.tab": "foundation/foundation.tab",
       "foundation.tooltip": "foundation/foundation.tooltip",
       "foundation.topbar": "foundation/foundation.topbar"
+    },
+    stache: {
+      path: "../../templates/"
     },
     shim: {
     	backbone: {

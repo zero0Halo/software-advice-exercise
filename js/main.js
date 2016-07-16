@@ -1,8 +1,16 @@
 define(function(require){
   require('foundation');
   require('foundation.reveal');
+  require('foundation.abide');
 
-  $('#myModal').foundation('reveal', 'open');
+  var statesPartial = require('stache!partials/states');
 
-  $(document).foundation();
+  $(function(){
+    $('.state-dropdown').html( statesPartial() );
+
+
+    $(document).foundation();
+  });
+
+  
 });
