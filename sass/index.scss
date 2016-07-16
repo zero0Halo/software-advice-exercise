@@ -1,2 +1,61 @@
 @import 'foundation';
 
+* {
+  box-sizing:border-box;
+}
+
+html {
+  font-size:10px;
+}
+
+nav.top-bar {
+  background-color:#333;
+  height: 6rem;
+  line-height: 6rem;
+  position: relative;
+
+  span.logo {
+    background: transparent url('../img/sa_logo_tm-reverse-2x-sm.png') no-repeat left top;
+    background-size:contain;
+    display: block;
+    height:1.95rem;
+    width:50%;
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+    left:1.5rem;
+  }
+}
+
+
+.button {
+  &.custom {
+    background-color: #ff851f;
+    border: solid #e56800 0.1rem;
+    color: #fff; 
+    font-size:1.3rem;
+    font-weight:bold;
+
+    &:hover {
+      background-color: #eb6b00;    
+    }   
+  }
+}// .button
+
+
+
+form {
+  h5 {
+    font-size:1.6rem;
+    font-weight:bold;
+    font-family: "Lucida Grande","Lucida Sans",Verdana,Geneva,sans-serif;
+    color: #344e67;
+  }
+
+  input[type="text"],
+  select {
+    height:3.7rem;
+    font-size:1.4rem;
+  }
+}
+
