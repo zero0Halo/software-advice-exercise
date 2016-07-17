@@ -7224,5 +7224,8 @@ form a.button.expand {
   .cookie-image.reviews {
     background-image: url("../img/icon-reviews.png");
     background-size: contain; }
+  .cookie-image.research {
+    background-image: url("../img/icon-research.png");
+    background-size: contain; }
 
 /*# sourceMappingURL=index.css.map */

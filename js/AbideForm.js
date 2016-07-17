@@ -1,7 +1,12 @@
 define(function(require){
+  require('jqueryCookie');
+  require('underscore');
+
   var AbideForm = function(obj){
     this.$form = $(obj);
     this.statesPartial = require('stache!partials/states');
+    this.classNames = ['advice', 'reviews', 'research'];
+    this.className = '';
     this.jsonData = {};
     this.events = {
       'valid.fndtn.abide form': 'validForm',
@@ -14,6 +19,18 @@ define(function(require){
     
     if($obj.length > 0){
       $obj.html( this.statesPartial() );
+    }
+  };
+  AbideForm.prototype.setRandomImage = function(){
+    var $image = this.$form.find('.cookie-image');
+
+    if( !$.cookie('className') ) {
+      this._setRandomClass();
+
+      $.cookie('className', this.className);
+      $image.addClass(this.className);
+    } else {
+      $image.addClass( $.cookie('className') );
     }
   };
   AbideForm.prototype.registerEvents = function(){
@@ -29,13 +46,8 @@ define(function(require){
     }
   };
   AbideForm.prototype.validForm = function(){
-    console.log(this.jsonData);
-  };
-  AbideForm.prototype.invalidForm = function(){
-    console.log('Invalid Form Submission');
-  };
-  AbideForm.prototype.submitForm = function(){
     var formData = this.$form.serializeArray();
+    this._setRandomClass();
 
     for(var i=0;i<formData.length;i++){
       var key = formData[i].name;
@@ -44,10 +56,24 @@ define(function(require){
       this.jsonData[key] = value;
     };
 
+    this.jsonData['className'] = this.className;
+    $.cookie('className', this.className);
+
+    console.log(this.jsonData);
+  };
+  AbideForm.prototype.invalidForm = function(){
+    console.log('Invalid Form Submission');
+  };
+  AbideForm.prototype.submitForm = function(){
     this.$form.submit();  
   };
+  AbideForm.prototype._setRandomClass = function(){
+    var random = _.random(this.classNames.length-1);
+    this.className = this.classNames[random];
+  };  
   AbideForm.prototype.init = function(){
     this.addStatesDropdown();
+    this.setRandomImage();
     this.registerEvents();
   };  
 
