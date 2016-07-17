@@ -24,86 +24,74 @@
 
 
   <div id="myModal" class="reveal-modal xlarge" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <h2 id="modalTitle">Provide Personal Information</h2>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-
-    <form data-abide>
+    <h2 id="modalTitle">Provide Personal Information</h2>
+    
+    <form data-abide="ajax">
       <div class="row">
         <div class="large-12 columns">
           <label>
             <h5>Name</h5>
+            <input type="text" name="name">
           </label>
-        </div>
-        <div class="large-12 columns">
-          <input type="text" pattern="alpha">
-        </div>        
+        </div>      
       </div>
 
       <div class="row">
         <div class="large-12 columns">
           <label>
-            <h5>Email Address</h5>
+            <h5>Email Address*</h5>
+            <input type="text" required pattern="email" name="email">
+            <small class="error">A valid email address is required.</small>            
           </label>
         </div>
-        <div class="large-12 columns">
-          <input type="text" required pattern="email">
-          <small class="error">A valid email address is required.</small>
-        </div>        
       </div>
 
       <div class="row">
         <div class="large-12 columns">
           <label>
             <h5>Phone Number</h5>
+            <input type="text" name="phoneNumber">
           </label>
         </div>
-        <div class="large-12 columns">
-          <input type="text">
-        </div>        
       </div>            
 
       <div class="row">
         <div class="large-12 columns">
           <label>
             <h5>Home Address</h5>
+            <input type="text" name="homeAddress">
           </label>
-        </div>
-        <div class="large-12 columns">
-          <input type="text">
-        </div>        
+        </div>       
       </div>   
 
       <div class="row">
         <div class="large-12 columns">
           <label>
             <h5>City</h5>
+            <input type="text" name="city">
           </label>
         </div>
-        <div class="large-12 columns">
-          <input type="text">
-        </div>        
       </div>
 
       <div class="row">
         <div class="large-12 columns">
           <label>
             <h5>State</h5>
+            <div class="state-dropdown">
+              <!-- Moustache Partial -->
+            </div>
           </label>
         </div>
-        <div class="large-12 columns state-dropdown">
-          <!-- Moustache Partial -->
-        </div>        
       </div>   
 
       <div class="row">
         <div class="large-12 columns">
           <label>
             <h5>Zip Code</h5>
+            <input type="text" name="zipcode">
           </label>
-        </div>
-        <div class="large-12 columns">
-          <input type="text">
-        </div>        
+        </div>      
       </div>                  
 
       <div class="row">
@@ -112,7 +100,7 @@
 
       <div class="row">
         <div class="large-12 columns">
-          <a class="button submit medium rounded expand">Submit</a>
+          <a class="button custom-submit medium rounded expand">Submit</a>
         </div>
       </div>
 

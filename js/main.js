@@ -3,17 +3,16 @@ define(function(require){
   require('foundation.reveal');
   require('foundation.abide');
 
-  var statesPartial = require('stache!partials/states');
+  var AbideForm = require('app/AbideForm');
 
   $(function(){
-    // $('#myModal').foundation('reveal', 'open');
-    $('.state-dropdown').html( statesPartial() );
-
-    $('a.button.submit').on('click',function(e){
-      $(this).parents('form').submit();      
-    });
-
     $(document).foundation();
+    
+    
+
+    var myForm = new AbideForm('#myModal form');
+    myForm.init();
+
   });
 
   
