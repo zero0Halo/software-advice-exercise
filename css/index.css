@@ -7190,6 +7190,10 @@ nav.top-bar {
   .button.custom:hover {
     background-color: #eb6b00; }
 
+#myModal h2 {
+  top: 1.5rem;
+  position: relative; }
+
 form h5 {
   font-size: 1.6rem;
   font-weight: bold;
@@ -7208,5 +7212,17 @@ form a.button.expand {
   padding: 2px;
   font-size: 1.4rem;
   font-style: normal; }
+
+.cookie-image {
+  width: 6.3rem;
+  height: 6.3rem;
+  display: inline-block;
+  background: transparent no-repeat left top; }
+  .cookie-image.advice {
+    background-image: url("../img/icon-advice.png");
+    background-size: contain; }
+  .cookie-image.reviews {
+    background-image: url("../img/icon-reviews.png");
+    background-size: contain; }
 
 /*# sourceMappingURL=index.css.map */

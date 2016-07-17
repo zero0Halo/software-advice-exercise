@@ -48,6 +48,14 @@ nav.top-bar {
 
 
 
+#myModal {
+  h2 {
+    top: 1.5rem;
+    position: relative;    
+  }
+}
+
+
 form {
   h5 {
     font-size:1.6rem;
@@ -73,6 +81,23 @@ form {
   padding: 2px;
   font-size:1.4rem;
   font-style: normal;
+}
+
+.cookie-image {
+  width:6.3rem;
+  height:6.3rem;
+  display: inline-block;
+  background: transparent no-repeat left top;
+
+  &.advice {
+    background-image: url('../img/icon-advice.png');
+    background-size:contain;
+  }
+
+  &.reviews {
+    background-image: url('../img/icon-reviews.png');
+    background-size:contain;
+  }  
 }
 
 
