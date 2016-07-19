@@ -12,7 +12,7 @@
 - SASS
 
 ####Pre Modal 
-![Pre Modal](img/screenshot-pre-modal.jpg)
+![Pre Modal](img/screenshot-pre-modal.png)
 
 ####Modal 
-![Modal](img/screenshot-modal.jpg)
+![Modal](img/screenshot-modal.png)
