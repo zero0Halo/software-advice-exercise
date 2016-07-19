@@ -13,6 +13,8 @@ define(function(require){
     var myForm = new AbideForm('#myModal form');
     myForm.init();
 
+    $('#myModal').foundation('reveal', 'open');
+
   });
 
   

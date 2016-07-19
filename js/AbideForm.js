@@ -5,8 +5,8 @@ define(function(require){
   var AbideForm = function(obj){
     this.$form = $(obj);
     this.statesPartial = require('stache!partials/states');
-    this.classNames = ['advice', 'reviews', 'research'];
-    this.className = '';
+    this.imagePaths = ['img/image01.jpg', 'img/image02.jpg'];
+    this.imagePath = '';
     this.jsonData = {};
     this.events = {
       'valid.fndtn.abide form': 'validForm',
@@ -24,13 +24,13 @@ define(function(require){
   AbideForm.prototype.setRandomImage = function(){
     var $image = this.$form.find('.cookie-image');
 
-    if( !$.cookie('className') ) {
-      this._setRandomClass();
+    if( !$.cookie('imagePath') ) {
+      this._setRandomImage();
 
-      $.cookie('className', this.className);
-      $image.addClass(this.className);
+      $.cookie('imagePath', this.imagePath);
+      $image.attr('src', this.imagePath);
     } else {
-      $image.addClass( $.cookie('className') );
+      $image.attr('src', $.cookie('imagePath') );
     }
   };
   AbideForm.prototype.registerEvents = function(){
@@ -47,7 +47,7 @@ define(function(require){
   };
   AbideForm.prototype.validForm = function(){
     var formData = this.$form.serializeArray();
-    this._setRandomClass();
+    this._setRandomImage();
 
     for(var i=0;i<formData.length;i++){
       var key = formData[i].name;
@@ -56,8 +56,8 @@ define(function(require){
       this.jsonData[key] = value;
     };
 
-    this.jsonData['className'] = this.className;
-    $.cookie('className', this.className);
+    this.jsonData['imagePath'] = this.imagePath;
+    $.cookie('imagePath', this.imagePath);
 
     console.log(this.jsonData);
   };
@@ -67,9 +67,9 @@ define(function(require){
   AbideForm.prototype.submitForm = function(){
     this.$form.submit();  
   };
-  AbideForm.prototype._setRandomClass = function(){
-    var random = _.random(this.classNames.length-1);
-    this.className = this.classNames[random];
+  AbideForm.prototype._setRandomImage = function(){
+    var random = _.random(this.imagePaths.length-1);
+    this.imagePath = this.imagePaths[random];
   };  
   AbideForm.prototype.init = function(){
     this.addStatesDropdown();

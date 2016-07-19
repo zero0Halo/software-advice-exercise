@@ -44,37 +44,51 @@ nav.top-bar {
       background-color: #eb6b00;    
     }   
   }
+
+  &.custom-submit {
+    background-color: #87c569;
+    border:solid #66ae43 0.1rem;
+    color: #fff;    
+  }
 }// .button
 
 
 
 #myModal {
-  h2 {
-    top: 1.5rem;
-    position: relative;    
+  max-width:none;
+
+  .row {
+    max-width: none;
   }
+
+  form {
+    input::-webkit-input-placeholder,
+    select option:first-child { /* WebKit, Blink, Edge */
+      color: rgba(0,0,0,0.5);
+    }
+
+    h5 {
+      font-size:1.6rem;
+      font-weight:bold;
+      font-family: "Lucida Grande","Lucida Sans",Verdana,Geneva,sans-serif;
+      color: #344e67;
+    }
+
+    input[type="text"],
+    select {
+      height:3.7rem;
+      font-size:1.4rem;
+    }
+
+    a.button.expand {
+      font-size:1.6rem;
+      font-weight:bold;
+    }
+  }// form
 }
 
 
-form {
-  h5 {
-    font-size:1.6rem;
-    font-weight:bold;
-    font-family: "Lucida Grande","Lucida Sans",Verdana,Geneva,sans-serif;
-    color: #344e67;
-  }
 
-  input[type="text"],
-  select {
-    height:3.7rem;
-    font-size:1.4rem;
-  }
-
-  a.button.expand {
-    font-size:1.6rem;
-    font-weight:bold;
-  }
-}
 
 [data-abide] .error small.error {
   background-color: #c60f13;
@@ -83,27 +97,7 @@ form {
   font-style: normal;
 }
 
-.cookie-image {
-  width:6.3rem;
-  height:6.3rem;
-  display: inline-block;
-  background: transparent no-repeat left top;
 
-  &.advice {
-    background-image: url('../img/icon-advice.png');
-    background-size:contain;
-  }
-
-  &.reviews {
-    background-image: url('../img/icon-reviews.png');
-    background-size:contain;
-  }  
-
-  &.research {
-    background-image: url('../img/icon-research.png');
-    background-size:contain;
-  }   
-}
 
 
 
